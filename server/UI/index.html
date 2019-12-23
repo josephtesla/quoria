@@ -1,0 +1,76 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Api testing</title>
+</head>
+
+<body>
+
+  <h3>REGISTER ROUTE</h3>
+  <form action="http://localhost:3000/api/v1/signup" method="POST">
+    <input type="text" name="firstname">
+    <input type="text" name="lastname">
+    <input type="text" name="othernames">
+    <input type="text" name="email">
+    <input type="text" name="">
+  </form>
+
+
+  <script>
+    var API = 'http://localhost:3000/api/v1'
+
+    var fetchParams = function fetchParams(method, body) {
+      return {
+        method: method,
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8'
+        },
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        redirect: 'follow',
+        referrer: 'no-referrer',
+        body: JSON.stringify(body)
+      };
+    };
+
+    const fakeUser = {
+      firstname: 'Isaac',
+      lastname: 'Newton',
+      othernames: 'Jay',
+      email: 'inj@g.com',
+      username: 'INewton',
+      password: 'excel',
+    }
+
+    const Register = () => {
+      fetch(`${API}/signup`, fetchParams('POST', fakeUser))
+      .then(resp => resp.json())
+      .then(res => {
+        console.log(res)
+      })
+  }
+
+  const loginDetails = {
+    username: 'INewton',
+    password: 'excel',
+  }
+
+  const Login = () => {
+      fetch(`${API}/login`, fetchParams('POST', loginDetails))
+      .then(resp => resp.json())
+      .then(res => {
+        console.log(res)
+      })
+  }
+
+  Register()
+
+  </script>
+
+</body>
+
+</html>
