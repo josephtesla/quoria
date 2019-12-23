@@ -6,6 +6,7 @@ import { Parcel, User } from '../models/models'
 
 use(chaiHttp)
 
+process.env.NODE_ENV = 'test'
 const API_PREFIX = '/api/v1';
 
 let token = null;
@@ -26,6 +27,7 @@ describe('Authentication', () => {
       .send(randomPayload)
       .end((err, res) => {
         expect(res).to.have.status(201);
+        expect(res).t
         done();
       })
   })

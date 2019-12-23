@@ -7,7 +7,7 @@
     "babel-node": "babel-node --presets=env",
     "start": "npm run build && node build/bin/index.js",
     "build": "babel server --out-dir build",
-    "test": "npm run build && mocha --timeout 10000 build/tests/"
+    "test": "npm run build && mocha --timeout 10000 build/test/"
   },
   "author": "Joseph",
   "license": "ISC",
