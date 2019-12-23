@@ -52,7 +52,7 @@ export default class parcelRouter {
   }
 
   static createParcelOrder(req, res) {
-    const userId = req.params;
+    const { userId } = req.params;
     const { weight, weightmetric, from, to } = req.body;
     const parcelEntry = {
       placedBy: userId,
@@ -71,8 +71,9 @@ export default class parcelRouter {
           message: "Order successfully created"
         }]
       })
-    ).catch(() => setImmediate(() => {
-      res.status(500).json("Error creating parcel delivery order")
+    ).catch((error) => setImmediate(() => {
+      console.log(error)
+      res.status(500).json({status: 500, error: "Error creating parcel delivery order"})
     }))
   }
 
@@ -99,7 +100,7 @@ export default class parcelRouter {
             to: newDestination,
             message: 'Parcel destination updated!'
           }]
-        }));
+        })).catch(() => setImmediate(() => res.status(500).json({ status: 500, error: "Error while updating parcel destination!" })));
 
       }
     )

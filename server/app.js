@@ -37,7 +37,7 @@ app.get(`${API_PREFIX}/users/:userId/parcels`, ParcelRouter.getParcelsByUser)
 
 app.patch(`${API_PREFIX}/parcels/:parcelId/cancel`, ParcelRouter.cancelParcelOrder)
 
-app.post(`${API_PREFIX}/parcels`, ParcelRouter.createParcelOrder)
+app.post(`${API_PREFIX}/parcels/:userId`, ParcelRouter.createParcelOrder)
 
 app.patch(`${API_PREFIX}/parcels/:parcelId/:userId/destination`, ParcelRouter.changeParcelDestination)
 

@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import Config from '../helpers/config'
 
-export default function verifyToken(req, res) {
+export default function verifyToken(req, res, next) {
 
   const token = req.body.token || req.query.token || req.headers['x-access-token'];
 

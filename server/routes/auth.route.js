@@ -8,7 +8,6 @@ import Config from '../helpers/config'
 class AuthRouter {
 
   static register(req, res) {
-    console.log(req.body)
     User.find({ username: req.body.username }).then(
       users => {
         if (users.length) return res.status(409).json({ status: 409, error: "You've already registered, kindly login" })
