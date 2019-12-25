@@ -89,7 +89,7 @@ export default class parcelRouter {
         }
 
         if (parcel.status == 'delivered') {
-          return res.status(409).json({ status: 409, error: 'Cannot changed the destination, already delivered' })
+          return res.status(409).json({ status: 409, error: 'Cannot change the destination, already delivered' })
         }
 
         parcel.to = newDestination;

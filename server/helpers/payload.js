@@ -1,3 +1,4 @@
+
 export default {
   firstname: 'Isaac',
   lastname: 'Newton',
@@ -5,4 +6,6 @@ export default {
   username: 'isaacnewton',
   email:'is@gmail.co',
   password:'somerandomstuff',
+  registered: new Date().toISOString(),
+  isAdmin: true
 }

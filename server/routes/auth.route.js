@@ -5,6 +5,7 @@ import bcrypt from 'bcryptjs';
 import Config from '../helpers/config'
 
 
+
 class AuthRouter {
 
   static register(req, res) {
