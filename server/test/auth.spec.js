@@ -1,10 +1,10 @@
 import { use, expect, request } from 'chai';
 import chaiHttp from 'chai-http';
-import server from '../bin/index'
-import randomPayload from '../helpers/payload'
-import { Parcel, User } from '../models/models'
+import server from '../bin/index';
+import randomPayload from '../helpers/payload';
+import { Parcel, User } from '../models/models';
 
-use(chaiHttp)
+use(chaiHttp);
 
 process.env.NODE_ENV = 'test'
 

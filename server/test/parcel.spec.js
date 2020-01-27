@@ -17,7 +17,6 @@ const parcelPayload = {
 }
 
 describe("Parcel routes token init", () => {
-
   beforeEach((done) => {
     User.deleteMany({}).then(() => {
       done()
@@ -38,7 +37,6 @@ describe("Parcel routes token init", () => {
 })
 
 describe("Begin Create Parcel Routes Test", () => {
-
   beforeEach((done) => {
     Parcel.deleteMany({}).then(() => {
       done()
@@ -61,7 +59,6 @@ describe("Begin Create Parcel Routes Test", () => {
   })
 
   describe("Parcel Operations Tests", () => {
-
     beforeEach((done) => {
       Parcel.deleteMany({}).then(() => {
         const { weight, weightmetric, from, to } = parcelPayload

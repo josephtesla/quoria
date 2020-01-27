@@ -14,7 +14,7 @@ export default function Config(environment) {
     }
   }
   else if (environment === 'test'){
-    const SECRETKEY = 'i-dont-know-whats-so-special-about-you!!!'
+    const SECRETKEY = 'okay-you-need-to-be-kept-secret'
     return {
       DATABASE_URI: process.env.TEST_DATABASE_URI,
       KEY: SECRETKEY
