@@ -36,6 +36,10 @@ build/Release
 node_modules/
 build/
 jspm_packages/
+vendor/
+fonts/
+img/
+Dummy_img/
 
 # TypeScript v1 declaration files
 typings/
