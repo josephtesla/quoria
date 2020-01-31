@@ -1,4 +1,4 @@
-const API_PREFIX = "http://localhost:3000/api/v1";
+const API_PREFIX = "http://quoria-service.herokuapp.com/api/v1";
 
 const userIsLoggedIn = () => localStorage.getItem("token");
 
