@@ -1,0 +1,23 @@
+.sign-up-form .input-group {
+  width: 400px;
+}
+
+ .input-group .form-control{
+  padding: 20px 10px;
+}
+
+.input-group .form-control:focus{
+  border:1px solid #F39C12;
+}
+.sign-up-form {
+  max-width: 400px;
+}
+
+@media screen and (max-width: 455px) {
+  .sign-up-form .input-group {
+    width: 300px;
+  }
+  .btn-submit {
+    width: 300px !important;
+  }
+}

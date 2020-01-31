@@ -1,0 +1,196 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <!--====== USEFULL META ======-->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Transportation & Agency Template is a simple Smooth transportation and Agency Based Template" />
+  <meta name="keywords" content="Portfolio, Agency, Onepage, Html, Business, Blog, Parallax" />
+
+  <!--====== TITLE TAG ======-->
+  <title>Create Delivery Order - Courier service app</title>
+
+  <!--====== FAVICON ICON =======-->
+  <link rel="shortcut icon" type="image/ico" href="img/favicon.png" />
+
+  <!--====== STYLESHEETS ======-->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/stellarnav.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/sign-up.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/loader.css">
+
+  <!--====== MAIN STYLESHEETS ======-->
+  <link href="style.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+
+  <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+  <style>
+    .quote-form textarea,
+    .quote-form .width-full input,
+    .quote-form .width-half input {
+      border: 1px solid #eba83d;
+    }
+  </style>
+</head>
+
+<body class="single-page">
+
+  <!--SCROLL TO TOP-->
+  <a href="#home" class="scrolltotop"><i class="fa fa-long-arrow-up"></i></a>
+
+  <!--START TOP AREA-->
+  <header class="top-area" id="home">
+    <div class="top-area-bg" data-stellar-background-ratio="0.6"></div>
+    <div class="header-top-area">
+      <!--MAINMENU AREA-->
+      <div class="mainmenu-area" id="mainmenu-area">
+        <div class="mainmenu-area-bg"></div>
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-header">
+              <a href="index.html" class="navbar-brand" style="color: #f39c12 !important;">
+                <h1>QUORIA</h1>
+              </a>
+            </div>
+            <div class="search-and-language-bar pull-right">
+              <ul>
+                <li><a href="#"><i class="fa fa-user"></i></a></li>
+                </li>
+              </ul>
+              <form action="#" class="search-form">
+                <input type="search" name="search" id="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+            <div id="main-nav" class="stellarnav">
+              <ul id="nav" class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="sign-up-logout" href="sign-up.html">Get started</a></li>
+                <li><a href="contact-2.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!--END MAINMENU AREA END-->
+    </div>
+
+  </header>
+  <!--END TOP AREA-->
+
+  <div class="container ">
+
+    <div class="card bg-light app-body">
+      <article class="card-body mx-auto" style="display: flex; justify-content: center;">
+        <form class="quote-form" action="#">
+          <h3>Create Parcel Delivery Order</h3>
+          <p class="width-full">
+            <input required type="text" name="from" id="from" placeholder="Pickup Location">
+          </p>
+          <p class="width-half">
+            <input required type="text" name="weightmetric" id="wmetric" placeholder="Weight Metric">
+            <input required class="pull-right" type="number" name="weight" id="weight" placeholder="Weight">
+          </p>
+          <p class="width-full">
+            <input required type="text" name="destination" id="destination" placeholder="Destination">
+          </p>
+          <p>
+            <textarea name="quote-message" id="quote-message" cols="30" rows="4"
+              placeholder="Your Message..."></textarea>
+          </p>
+          <button type="submit">CREATE</button>
+          <a data-toggle="modal" data-target="#parcelCreatedModal" id="order-confirm-toggler"></a>
+        </form>
+      </article>
+    </div> <!-- card.// -->
+
+
+    <div class="text-center">
+      <a style="padding: 10px; margin-bottom: 20px;" href="index.html" class="read-more">Back To Home</a>
+    </div>
+
+    <section id='loader' style="display: none;">
+      <div class='showbox'>
+        <div class='loader'>
+          <svg class='circular' viewBox='25 25 50 50'>
+            <circle class='path' cx='50' cy='50' r='20' fill='none' stroke-width='2' stroke-miterlimit='10'></circle>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <!--container end.//-->
+
+  <!--Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Logout</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Do you want to log out current user?
+        </div>
+        <div class="modal-footer">
+          <button id="logout-confirm-btn" type="submit" class="btn btn-primary">YES</button>
+          <button type="submit" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Cancel</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Confirmation Modal-->
+  <div class="modal fade" id="parcelCreatedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Confirmation</h3>
+          <button type="button" class="close close-confirm" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6 id="created-message">Parcel Delivery Order Successfully Created! <i class="fa fa-check"></i></h6>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary close-confirm" data-dismiss="modal"
+            aria-label="Close">Ok</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--====== SCRIPTS JS ======-->
+  <script src="js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+
+  <!--====== PLUGINS JS ======-->
+  <script src="js/vendor/stellar.js"></script>
+  <script src="js/vendor/wow.min.js"></script>
+  <script src="js/vendor/stellarnav.min.js"></script>
+  <script src="js/vendor/jquery.sticky.js"></script>
+
+  <!--===== ACTIVE JS=====-->
+  <script src="js/helper.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/create-parcel.js"></script>
+</body>
+
+</html>

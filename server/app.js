@@ -6,6 +6,7 @@ import logger from 'morgan';
 import authRouter from "./routes/auth.route";
 import parcelRouter from './routes/parcels.route';
 import userRouter from './routes/user.route';
+import UIRoute from '../index';
 import verifyToken from './middleware/verifytoken'
 import initConnection from './helpers/init';
 import initializeAdmins from './helpers/admin';
@@ -20,6 +21,8 @@ const app = express();
 //body-parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
+
+app.use("/", UIRoute);
 
 //ENABLE CORS
 app.use(Cors());
@@ -43,6 +46,7 @@ app.use(function (req, res, next) {
   err.status = 404;
   next(err);
 });
+
 
 // error handlers
 // development error handler

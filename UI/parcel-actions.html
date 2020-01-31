@@ -1,0 +1,292 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <!--====== USEFULL META ======-->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Transportation & Agency Template is a simple Smooth transportation and Agency Based Template" />
+  <meta name="keywords" content="Portfolio, Agency, Onepage, Html, Business, Blog, Parallax" />
+
+  <!--====== TITLE TAG ======-->
+  <title>ORDER DETAILS - Courier service app</title>
+
+  <!--====== FAVICON ICON =======-->
+  <link rel="shortcut icon" type="image/ico" href="img/favicon.png" />
+
+  <!--====== STYLESHEETS ======-->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/stellarnav.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/sign-up.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/loader.css">
+
+  <!--====== MAIN STYLESHEETS ======-->
+  <link href="style.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+
+  <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+  <style>
+      #map {
+        height: 420px;
+        width: 100%;
+        border:1px solid #eba83d;
+        border-radius: 10px;
+      }
+    }
+  </style>
+  <script>
+    if (window.location.search) {
+      if (window.location.search.split("&")[0].split("=")[1].length !== 24) {
+        window.location.href = "parcels-view.html";
+      }
+    } else {
+      window.location.href = "parcels-view.html";
+    }
+  </script>
+</head>
+
+<body class="single-page">
+
+  <!--SCROLL TO TOP-->
+  <a href="#home" class="scrolltotop"><i class="fa fa-long-arrow-up"></i></a>
+
+  <!--START TOP AREA-->
+  <header class="top-area" id="home">
+    <div class="top-area-bg" data-stellar-background-ratio="0.6"></div>
+    <div class="header-top-area">
+      <!--MAINMENU AREA-->
+      <div class="mainmenu-area" id="mainmenu-area">
+        <div class="mainmenu-area-bg"></div>
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-header">
+              <a href="index.html" class="navbar-brand" style="color: #f39c12 !important;">
+                <h1>QUORIA</h1>
+              </a>
+            </div>
+            <div class="search-and-language-bar pull-right">
+              <ul>
+                <li><a href="#"><i class="fa fa-user"></i></a></li>
+                </li>
+              </ul>
+              <form action="#" class="search-form">
+                <input type="search" name="search" id="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+            <div id="main-nav" class="stellarnav">
+              <ul id="nav" class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="sign-up-logout" href="sign-up.html">Get started</a></li>
+                <li><a href="contact-2.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!--END MAINMENU AREA END-->
+    </div>
+
+  </header>
+  <!--END TOP AREA-->
+
+  <div class="container ">
+
+    <div class="card bg-light app-body">
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="single-service-three wow fadeInUp" data-wow-delay=".2s">
+            <div class="service-icon-three"><i class="fa fa-truck"></i></div>
+            <h3>Order Id: <span id="order-id"></span></h3>
+            <p style="font-size: 17px;" id="details"><strong><u>Placed On: </u></strong> <span id="order-date"></span> <br><br>
+              <strong><u>Pick up location</u>:</strong> <span id="order-pickup"></span> <br><br>
+              <strong><u>Current location:</u></strong> <span id="order-current"></span> <br><br>
+              <strong><u>Destination:</u></strong> <span id="order-dest"></span><br><br>
+              <strong><u>Status</u>:</strong> <span id="order-status"></span></i> <br><br>
+              <strong><u>Quantity</u>:</strong> <span id="order-quantity"></span> <br><br>
+            </p> <br>
+            <a class="cancel-order-btn" data-toggle="modal" data-target="#cancelModal"><button
+                class="btn btn-danger btn-circle btn-sm">
+                <i class="fa fa-trash"></i><b> CANCEL ORDER</b>
+              </button></a>
+            &nbsp;&nbsp;&nbsp;
+            <a class="change-dest-btn" data-toggle="modal" data-target="#destModal"><button class="btn btn-info btn-circle btn-sm">
+                <i class="fa fa-info-circle"></i> <b> CHANGE DESTINATION</b>
+              </button> </a>
+          </div>
+
+        </div>
+        <div class="single-service-three col-md-6">
+          <div class="order-maps">
+            <p class="lead">Location details On Map</p>
+              <div id="map"></div>
+            </div>
+        </div>
+      </div>
+    </div> <!-- card.// -->
+
+    <div class="text-center">
+      <a style="padding: 10px; margin-bottom: 20px;" href="index.html" class="read-more">Back To Home</a>
+    </div>
+
+    <section id='loader' style="display: none;">
+      <div class='showbox'>
+        <div class='loader'>
+          <svg class='circular' viewBox='25 25 50 50'>
+            <circle class='path' cx='50' cy='50' r='20' fill='none' stroke-width='2' stroke-miterlimit='10'></circle>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <!--container end.//-->
+
+  <!--Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Logout</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Do you want to log out current user?
+        </div>
+        <div class="modal-footer">
+          <button id="logout-confirm-btn" type="submit" class="btn btn-primary">YES</button>
+          <button type="submit" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Cancel</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div hidden id="cancel-modal-trigger" data-toggle="modal" data-target="#cancel-success-Modal"></div>
+  <!--Cancel Order Confirmation Modal-->
+  <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Cancel Order ID: <span id="order-cancel-id"></span></h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Cancel and delete delivery order completely?
+        </div>
+        <div class="modal-footer">
+          <button id="cancel-confirm-btn" type="submit" class="btn btn-danger">YES</button>
+          <button type="submit" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Cancel</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!--Successful cancellation Modal-->
+  <div class="modal fade" id="cancel-success-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Successfull</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Order Successfully cancelled!.
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Cancel</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Change Destination form modal-->
+  <div class="modal fade" id="destModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Change Destination</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="dest-form">
+          Changing parcel delivery order destination from  '<span id="current-dest"></span>' to: <br><br>
+          <p class="form-group">
+            <input style="width: 90%; padding: 10px 20px; border:1px solid #eba83d;"
+             required type="text"
+              name="newDestination"
+              id="newDestination"
+              placeholder="Enter new destination">
+          </p>
+          <button class="btn btn-primary" type="submit">change</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" id="dest-closer" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Cancel</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====Google Maps ====-->
+
+  <script>
+    function initMap() {
+      const options = {
+        zoom: 8,
+        center: {
+          lat: 6.5244,
+          lng: 3.3792
+        }
+      }
+      var map = new google.maps.Map(document.querySelector("#map"), options);
+    }
+  </script>
+   <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRrIFBU4BYrHoIJfEKgI1LS6eepPH5nng&callback=initMap">
+    </script>
+
+  <!--====== SCRIPTS JS ======-->
+  <script src="js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+
+  <!--====== PLUGINS JS ======-->
+  <script src="js/vendor/stellar.js"></script>
+  <script src="js/vendor/wow.min.js"></script>
+  <script src="js/vendor/stellarnav.min.js"></script>
+  <script src="js/vendor/jquery.sticky.js"></script>
+
+  <!--===== ACTIVE JS=====-->
+  <script src="js/helper.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/parcel-actions.js"></script>
+</body>
+
+</html>
